@@ -1,6 +1,6 @@
 package com.marcal.parcelas_backend.dto;
 
-import com.marcal.parcelas_backend.model.Parcela;
+import com.marcal.parcelas_backend.model.entity.Parcela;
 
 public class ParcelaDTO {
 	

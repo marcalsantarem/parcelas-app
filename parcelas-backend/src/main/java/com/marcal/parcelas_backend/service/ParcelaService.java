@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.marcal.parcelas_backend.dto.ParcelaDTO;
-import com.marcal.parcelas_backend.model.Parcela;
+import com.marcal.parcelas_backend.model.entity.Parcela;
 import com.marcal.parcelas_backend.repository.ParcelaRepository;
 
 @Service

@@ -1,4 +1,4 @@
-package com.marcal.parcelas_backend.model;
+package com.marcal.parcelas_backend.model.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
