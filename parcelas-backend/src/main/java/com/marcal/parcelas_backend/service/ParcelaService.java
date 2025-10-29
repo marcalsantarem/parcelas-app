@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.marcal.parcelas_backend.dto.ParcelaDTO;
 import com.marcal.parcelas_backend.model.entity.Parcela;
@@ -17,14 +16,12 @@ public class ParcelaService {
 	@Autowired
 	private ParcelaRepository repository;
 	
-	@Transactional(readOnly = true)
 	public ParcelaDTO findById(Long id) {		
 		Parcela parcela = repository.findById(id).get();
 		ParcelaDTO dto = new ParcelaDTO(parcela);
 		return dto;
 	}
 
-	@Transactional(readOnly = true)
 	public List<ParcelaDTO> findAll() {
 		return 
 			repository.findAll().stream().map(p -> new ParcelaDTO(p)).collect(Collectors.toList());

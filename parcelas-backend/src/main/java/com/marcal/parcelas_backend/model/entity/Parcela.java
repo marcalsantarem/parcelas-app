@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,13 +17,17 @@ public class Parcela {
 	private Long id;
 	private String descricao;
 	private Double valor;
+	@ManyToOne
+	@JoinColumn(name = "forma_pagamento_id")
+	private FormaPagamento formaPagamento;
 	
 	public Parcela() {}
 	
-	public Parcela(Long id, String descricao, Double valor) {
+	public Parcela(Long id, String descricao, Double valor, FormaPagamento formaPagamentp) {
 		this.id = id;
 		this.descricao = descricao;
 		this.valor = valor;
+		this.formaPagamento = formaPagamentp;
 	}
 	
 	public Long getId() {
@@ -46,6 +52,14 @@ public class Parcela {
 	
 	public void setValor(Double valor) {
 		this.valor = valor;
+	}
+	
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
+	}
+	
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
 	}
 		
 }

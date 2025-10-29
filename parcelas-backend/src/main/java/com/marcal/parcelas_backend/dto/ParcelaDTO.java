@@ -7,19 +7,22 @@ public class ParcelaDTO {
 	private Long id;
 	private String descricao;
 	private Double valor;
+	private Long formaPagamentoId;
 	
 	public ParcelaDTO() {}
 
-	public ParcelaDTO(Long id, String descricao, Double valor) {
+	public ParcelaDTO(Long id, String descricao, Double valor, Long formaPagamentoId) {
 		this.id = id;
 		this.descricao = descricao;
 		this.valor = valor;
+		this.formaPagamentoId = formaPagamentoId;
 	}	
 
 	public ParcelaDTO(Parcela p) {
 		this.id = p.getId();
 		this.descricao = p.getDescricao();
 		this.valor = p.getValor();
+		this.formaPagamentoId = p.getFormaPagamento().getId();
 	}
 
 	public Long getId() {
@@ -45,5 +48,13 @@ public class ParcelaDTO {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}	
+
+	public Long getFormaPagamentoId() {
+		return formaPagamentoId;
+	}
+
+	public void setFormaPagamentoId(Long formaPagamentoId) {
+		this.formaPagamentoId = formaPagamentoId;
+	}
 
 }
