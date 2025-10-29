@@ -1,5 +1,6 @@
 package com.marcal.parcelas_backend.model.entity;
 
+import com.marcal.parcelas_backend.dto.FormaPagamentoRequestDTO;
 import com.marcal.parcelas_backend.model.enums.PeriodoPagamento;
 
 import jakarta.persistence.Entity;
@@ -27,6 +28,11 @@ public class FormaPagamento {
 		this.id = id;
 		this.nome = nome;
 		this.periodo = periodo;
+	}
+	
+	public FormaPagamento(FormaPagamentoRequestDTO dto) {
+		this.nome = dto.nome();
+		this.periodo = dto.periodo();
 	}
 
 	public Long getId() {
