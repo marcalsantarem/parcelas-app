@@ -2,23 +2,23 @@ package com.marcal.parcelas_backend.dto;
 
 import com.marcal.parcelas_backend.model.entity.Parcela;
 
-public class ParcelaDTO {
+public class ParcelaResponseDTO {
 	
 	private Long id;
 	private String descricao;
 	private Double valor;
 	private Long formaPagamentoId;
 	
-	public ParcelaDTO() {}
+	public ParcelaResponseDTO() {}
 
-	public ParcelaDTO(Long id, String descricao, Double valor, Long formaPagamentoId) {
+	public ParcelaResponseDTO(Long id, String descricao, Double valor, Long formaPagamentoId) {
 		this.id = id;
 		this.descricao = descricao;
 		this.valor = valor;
 		this.formaPagamentoId = formaPagamentoId;
 	}	
 
-	public ParcelaDTO(Parcela p) {
+	public ParcelaResponseDTO(Parcela p) {
 		this.id = p.getId();
 		this.descricao = p.getDescricao();
 		this.valor = p.getValor();
