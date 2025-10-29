@@ -3,21 +3,21 @@ package com.marcal.parcelas_backend.dto;
 import com.marcal.parcelas_backend.model.entity.FormaPagamento;
 import com.marcal.parcelas_backend.model.enums.PeriodoPagamento;
 
-public class FormaPagamentoDTO {
+public class FormaPagamentoResponseDTO {
 
 	private Long id;
 	private String nome;
 	private PeriodoPagamento periodo;
 	
-	public FormaPagamentoDTO() {}
+	public FormaPagamentoResponseDTO() {}
 
-	public FormaPagamentoDTO(Long id, String nome, PeriodoPagamento periodo) {
+	public FormaPagamentoResponseDTO(Long id, String nome, PeriodoPagamento periodo) {
 		this.id = id;
 		this.nome = nome;
 		this.periodo = periodo;
 	}
 	
-	public FormaPagamentoDTO(FormaPagamento f) {
+	public FormaPagamentoResponseDTO(FormaPagamento f) {
 		this.id = f.getId();
 		this.nome = f.getNome();
 		this.periodo = f.getPeriodo();

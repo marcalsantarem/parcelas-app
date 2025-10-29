@@ -15,16 +15,16 @@ public class ParcelaService {
 	
 	@Autowired
 	private ParcelaRepository repository;
+
+	public List<ParcelaDTO> findAll() {
+		return 
+			repository.findAll().stream().map(p -> new ParcelaDTO(p)).collect(Collectors.toList());
+	}
 	
 	public ParcelaDTO findById(Long id) {		
 		Parcela parcela = repository.findById(id).get();
 		ParcelaDTO dto = new ParcelaDTO(parcela);
 		return dto;
-	}
-
-	public List<ParcelaDTO> findAll() {
-		return 
-			repository.findAll().stream().map(p -> new ParcelaDTO(p)).collect(Collectors.toList());
 	}
 
 }
