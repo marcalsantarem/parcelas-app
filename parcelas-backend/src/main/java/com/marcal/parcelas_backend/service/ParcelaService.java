@@ -41,6 +41,24 @@ public class ParcelaService {
 		repository.save(p);
 		return new ParcelaResponseDTO(p);
 	}
+	
+	public ParcelaResponseDTO update(Long id, ParcelaRequestDTO dto) {
+		Parcela p = repository.findById(id).get();
+		p.setDescricao(dto.descricao());
+		p.setValor(dto.valor());
+		FormaPagamento forma = formaPagamentoRepository.findById(dto.formaPagamentoId()).get();
+		p.setFormaPagamento(forma);
+		repository.save(p);
+		return new ParcelaResponseDTO(p);
+	}
+	
+	public void delete(Long id) {
+		if (!repository.existsById(id)) {
+			System.out.println("Não existe");
+			return;
+		}
+		repository.deleteById(id);
+	}	
 
 }
 
